@@ -1,6 +1,6 @@
 # 🤖 Terminator-Dancer
 
-## High-Performance Solana Runtime Foundation
+## Solana Runtime Proof-of-Concept
 
 [![Build Status](https://img.shields.io/badge/build-passing-brightgreen)](https://github.com/solana-labs/firedancer)
 [![License](https://img.shields.io/badge/license-Apache--2.0-blue)](LICENSE)
@@ -8,25 +8,26 @@
 
 ## 🚀 Overview
 
-Terminator-Dancer is a **lightweight, high-performance Solana runtime engine** built for rapid development and production deployment. It implements core transaction processing, account management, and cryptographic verification needed for Solana compatibility—demonstrating how modern tooling enables fast iteration on sophisticated blockchain infrastructure.
+Terminator-Dancer is a **proof-of-concept Solana runtime engine** that demonstrates rapid development of blockchain infrastructure. It implements core transaction processing, account management, and cryptographic verification components to show Solana compatibility is achievable with modern development tools.
 
-**Key Focus:** Transaction processing engine with production-grade performance, not yet a complete validator.
+**What it is:** A working demo with real cryptography and basic transaction processing  
+**What it's not:** A production-ready validator or complete runtime
 
 ## ✨ Current Implementation Status
 
-### ✅ **Production-Ready Core Components**
+### ✅ **Working Components**
 - **Ed25519 Signature Verification** - Using `ed25519-dalek` (same library as Solana mainnet)
-- **SHA256 Hashing** - Real cryptographic hashing with hardware optimization
-- **Transaction Format Parsing** - Full Solana transaction deserialization/serialization
-- **Program Derived Address (PDA) Generation** - Exact Solana algorithm implementation
-- **Instruction Processing** - Compatible instruction format handling
-- **Comprehensive Testing** - 17+ unit tests with fuzzing and conformance testing
+- **SHA256 Hashing** - Real cryptographic hashing implementation
+- **Transaction Format Parsing** - Basic Solana transaction deserialization/serialization
+- **Program Derived Address (PDA) Generation** - Correct Solana algorithm implementation
+- **Basic Instruction Processing** - Simple instruction format handling
+- **Test Suite** - Unit tests with some fuzzing and conformance testing
 
-### 🚧 **Firedancer Integration-Ready Components**
-- **Runtime Execution Engine** - Structured for Firedancer BPF VM integration
-- **Account Management** - Prepared for distributed banking integration  
-- **Transaction Processing Pipeline** - Designed for high-throughput validation
-- **C Library Bindings** - Interface definitions ready for Firedancer linkage
+### 🚧 **Demo/Stub Components (Not Production Ready)**
+- **Runtime Execution Engine** - Basic framework, needs full BPF VM integration
+- **Account Management** - Simplified in-memory storage, needs persistence
+- **Transaction Processing Pipeline** - Basic validation, needs full Solana semantics
+- **Firedancer Integration** - Interface definitions and stubs, needs actual C bindings
 
 ## 📊 Crypto Performance Demos
 
@@ -78,12 +79,14 @@ cargo bench
 ## 🧪 Test Suite Status
 
 ```
-✅ All core tests passing (17+ tests)
-✅ Cryptographic conformance verified
-✅ Solana transaction compatibility confirmed  
-✅ Performance demos stable
-✅ Firedancer integration interfaces ready
+✅ Core unit tests passing
+✅ Basic cryptographic verification working
+✅ Solana transaction format compatibility demonstrated
+✅ Performance demos functional
+✅ Firedancer integration interfaces defined
 ```
+
+*Note: This is basic testing for a proof-of-concept, not comprehensive production validation*
 
 ## 🔮 Technical Foundation
 
