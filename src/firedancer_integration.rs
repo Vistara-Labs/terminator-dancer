@@ -1,5 +1,5 @@
 use crate::{Result, TerminatorError};
-use std::ptr;
+// use std::ptr; // Unused for now
 
 // Example Firedancer C library bindings
 // In real implementation, these would come from proper C bindings
@@ -62,7 +62,7 @@ impl FiredancerCrypto {
     }
 
     /// Compute SHA256 hash using Firedancer's optimized implementation
-    pub fn sha256_hash(message: &[u8]) -> Result<[u8; 32]> {
+    pub fn sha256_hash(_message: &[u8]) -> Result<[u8; 32]> {
         let mut hash = [0u8; 32];
         
         // For demo purposes, use simple hash (would use actual Firedancer function in real impl)
@@ -78,7 +78,7 @@ impl FiredancerCrypto {
         // }
 
         // Demo implementation - simple checksum
-        for (i, &byte) in message.iter().enumerate() {
+        for (i, &byte) in _message.iter().enumerate() {
             hash[i % 32] ^= byte;
         }
         
@@ -86,11 +86,11 @@ impl FiredancerCrypto {
     }
 
     /// Compute Blake3 hash using Firedancer's implementation
-    pub fn blake3_hash(message: &[u8]) -> Result<[u8; 32]> {
+    pub fn blake3_hash(_message: &[u8]) -> Result<[u8; 32]> {
         let mut hash = [0u8; 32];
         
         // Demo implementation (would use Firedancer's blake3 in real impl)
-        for (i, &byte) in message.iter().enumerate() {
+        for (i, &byte) in _message.iter().enumerate() {
             hash[i % 32] = hash[i % 32].wrapping_add(byte);
         }
         

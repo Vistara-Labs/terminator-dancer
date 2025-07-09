@@ -1,6 +1,6 @@
 # 🤖 Terminator-Dancer
 
-## Solana Runtime Proof-of-Concept
+## Solana Runtime Proof-of-Concept [WIP]
 
 [![Build Status](https://img.shields.io/badge/build-passing-brightgreen)](https://github.com/solana-labs/firedancer)
 [![License](https://img.shields.io/badge/license-Apache--2.0-blue)](LICENSE)
@@ -8,22 +8,22 @@
 
 ## 🚀 Overview
 
-Terminator-Dancer is a **proof-of-concept Solana runtime engine** that demonstrates rapid development of blockchain infrastructure. It implements core transaction processing, account management, and cryptographic verification components to show Solana compatibility is achievable with modern development tools.
+Terminator-Dancer is a **proof-of-concept Solana runtime engine** that aims to implement core transaction processing, account management, and cryptographic verification components as pluggable modules.
 
-**What it is:** A working demo with real cryptography and basic transaction processing  
+**  
 **What it's not:** A production-ready validator or complete runtime
 
 ## ✨ Current Implementation Status
 
-### ✅ **Working Components**
+### **Working Components**
 - **Ed25519 Signature Verification** - Using `ed25519-dalek` (same library as Solana mainnet)
-- **SHA256 Hashing** - Real cryptographic hashing implementation
+- **SHA256 Hashing** - cryptographic hashing implementation
 - **Transaction Format Parsing** - Basic Solana transaction deserialization/serialization
 - **Program Derived Address (PDA) Generation** - Correct Solana algorithm implementation
 - **Basic Instruction Processing** - Simple instruction format handling
 - **Test Suite** - Unit tests with some fuzzing and conformance testing
 
-### 🚧 **Demo/Stub Components (Not Production Ready)**
+### **Demo/Stub Components (Not Production Ready)**
 - **Runtime Execution Engine** - Basic framework, needs full BPF VM integration
 - **Account Management** - Simplified in-memory storage, needs persistence
 - **Transaction Processing Pipeline** - Basic validation, needs full Solana semantics
@@ -32,10 +32,10 @@ Terminator-Dancer is a **proof-of-concept Solana runtime engine** that demonstra
 ## 📊 Crypto Performance Demos
 
 ```
-🔐 Ed25519 Signature Verification:  ~4,400 ops/sec
-🔢 SHA256 Hashing:                ~170,000 ops/sec  
-🔑 PDA Derivation:                 ~16,000 ops/sec
-📦 Batch Verification:             ~4,100 ops/sec
+🔐 Ed25519 Signature Verification
+🔢 SHA256 Hashing
+🔑 PDA Derivation
+📦 Batch Verification
 ```
 
 *Performance from `crypto_demo.rs` - run `cargo run --example crypto_demo` for live benchmarks*
@@ -88,10 +88,10 @@ cargo bench
 
 *Note: This is basic testing for a proof-of-concept, not comprehensive production validation*
 
-## 🔮 Technical Foundation
+## Technical Foundation
 
-### Real Cryptography
-- **Production Libraries**: Uses the same `ed25519-dalek` and `sha2` crates as Solana mainnet
+### 
+- **Libraries**: Uses the same `ed25519-dalek` and `sha2` crates as Solana mainnet
 - **Hardware Optimization**: Leverages CPU-specific optimizations for cryptographic operations
 - **Constant-Time Operations**: All cryptographic functions are timing-attack resistant
 
@@ -118,13 +118,11 @@ Message: This is a real cryptographic signature from Terminator-Dancer runtime!
 Public Key: c7ef6b88736f61e51f148f7deca11617dc12afd030c40f08fc8c2e99ec72e0b6
 Signature: 309cedb8e118796bb02d60568eaa418b2e00864721aad364109ad1d0ff3c81eb5774d60748668fcc5756b00ff996a0fc0e31eb715aa5a3c158c3f91608f5910f
 ✅ Signature verification: VALID
-📊 Performance: 4561 signature verifications/second
 
 🔗 TEST 2: SHA256 Hashing
 =========================
 Data: Terminator-Dancer: Next-gen Solana runtime with real crypto!
 SHA256: 3f1f16d3b96662cb783388d777ec068d7799243d9b6dc289bf901d5b1ee3b6c2
-📊 Performance: 182965 hashes/second
 
 🎯 TEST 3: Program Derived Addresses
 ===================================
@@ -132,7 +130,6 @@ Program ID: 2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a
 Seeds: ["terminator", "dancer", "pda"]
 PDA: 6b2333c53663b8a24428283150968458280cff5e490b8203ff78209fe870a147
 Bump: 253
-📊 Performance: 18491 PDA derivations/second
 
 🌐 TEST 4: Solana Transaction Format
 ===================================
@@ -146,27 +143,14 @@ JSON representation available (2506 chars)
 
 ⚡ TEST 5: Batch Crypto Operations
 =================================
-Generating 50 signatures...
-Generated in 9.63ms
-✅ Batch verification: ALL VALID (11.17ms)
-📊 Batch verification rate: 4477 signatures/second
+Generating 50 signatures
 
 🔒 TEST 6: Transaction Security
 ==============================
 Transaction data: transfer:from=alice,to=bob,amount=1000000
 Recent blockhash: 0707070707070707070707070707070707070707070707070707070707070707
 Message hash: a98b916746b891b582ba01a8779112a3a18fe81a1bb151aca7769553efa351ab
-✅ Transaction signature: VALID
-
-🎉 TERMINATOR-DANCER CAPABILITIES
-=============================================
-✅ Real Ed25519 cryptography (industry standard)
-✅ High-performance signature verification
-✅ SHA256 hashing compatible with Solana
-✅ Program Derived Address generation
-✅ Solana transaction format parsing
-✅ Batch cryptographic operations
-✅ Transaction security and integrity
+✅ Transaction signature
 ```
 
 ## 🛣️ Integration Roadmap
@@ -191,10 +175,6 @@ Message hash: a98b916746b891b582ba01a8779112a3a18fe81a1bb151aca7769553efa351ab
 - [ ] Snapshot generation and verification
 - [ ] Ledger archival and pruning
 
-## 🎯 Why This Matters
-
-This implementation proves that **Solana's core algorithms can be efficiently implemented in Rust** with performance that exceeds other blockchain implementations. The cryptographic foundation is production-ready, and the architecture is designed for seamless integration with Firedancer's high-performance infrastructure.
-
 ## 🔬 Development
 
 ```bash
@@ -218,4 +198,4 @@ Licensed under the Apache License, Version 2.0. See [LICENSE](LICENSE) for detai
 
 ---
 
-**Built with Rust 🦀 | Powered by Firedancer 🔥 ⚡**
+*This is experimental and ONLY used for educational purposes at the moment.*

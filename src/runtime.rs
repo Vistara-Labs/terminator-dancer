@@ -8,7 +8,10 @@ static INIT: Once = Once::new();
 
 fn init_logging() {
     INIT.call_once(|| {
-        tracing_subscriber::fmt::init();
+        #[cfg(all(feature = "tracing-subscriber", not(feature = "wasm")))]
+        {
+            tracing_subscriber::fmt::init();
+        }
     });
 }
 
@@ -20,8 +23,9 @@ pub struct TerminatorRuntime {
 
 impl TerminatorRuntime {
     pub async fn new(config_path: &str) -> Result<Self> {
-        // Initialize logging
-        init_logging();
+        // Initialize logging for native builds only
+        #[cfg(all(feature = "tracing-subscriber", not(feature = "wasm")))]
+        tracing_subscriber::fmt::init();
         
         let config = if fs::metadata(config_path).is_ok() {
             let config_str = fs::read_to_string(config_path)
