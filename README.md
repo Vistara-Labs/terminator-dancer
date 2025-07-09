@@ -10,7 +10,7 @@
 
 Terminator-Dancer is a **proof-of-concept Solana runtime engine** that aims to implement core transaction processing, account management, and cryptographic verification components as pluggable modules.
 
-**  
+*⚠️ This is an early WIP dev repo, not yet connected to Firedancer crypto. Benchmarks and claims are placeholder*  
 **What it's not:** A production-ready validator or complete runtime
 
 ## ✨ Current Implementation Status
